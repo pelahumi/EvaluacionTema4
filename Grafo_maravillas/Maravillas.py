@@ -17,5 +17,8 @@ class Grafo():
         self.dirigido = dirigido
         self.tamanio = 0
 
-        
+class Arista():
+    def __init__(self):
+        self.inicio = None
+        self.tamanio = 0      
     
