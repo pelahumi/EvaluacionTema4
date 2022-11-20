@@ -11,4 +11,11 @@ class NodoVertice():
         self.visitado = False 
         self.adyacentes = Arista()
 
+class Grafo():
+    def __init__(self, dirigido= False):
+        self.inicio = None
+        self.dirigido = dirigido
+        self.tamanio = 0
 
+        
+    
