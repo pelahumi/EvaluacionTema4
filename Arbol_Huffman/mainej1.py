@@ -21,6 +21,8 @@ lista.agregar_nodo(nodo7)
 lista.sort()
 
 lista.suma()
+raiz = lista.suma()
+clave = list("11100")
+lista.decodificar(clave, raiz)
 
-print(lista.letra("11100101100", lista.suma()))
 

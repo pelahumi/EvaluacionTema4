@@ -28,7 +28,7 @@ class Huffman():
     def barrido(self):
         i = 0
         while i < len(self.lista):
-            print(self.lista[i].info)
+            print(self.lista[i].der.der.der.info)
             i += 1
         else:
             return
@@ -47,23 +47,33 @@ class Huffman():
                 self.eliminar_nodo(self.lista[0])
                 self.sort()
                 control = True
-                
-    def letra(self, texto, raiz):
-        texto = list(texto)
-        palabra = []
-        while len(texto) > 0:
-            i = 0
-            if self.lista[i].info is not None:
-                if texto[0] == 0:
-                    texto = texto.pop(0)
-                    self.letra(texto, raiz.izq)
-                elif texto[0] == 1:
-                    texto = texto.pop(0)
-                    self.letra(texto, raiz.der)
+        return self.lista[0]
+
+    #Funciona cuando se introduce letra a letra, pero no se porque cuando se introduce una palabra no funciona         
+    def decodificar(self, clave, raiz):
+        control = True
+        while control:
+            if len(clave) > 0:
+                control = False
+                if clave[0] ==  "1":
+                    clave.pop(0)
+                    if raiz.der.info is not None:
+                        print(raiz.der.info, end="")
+                    else:
+                        control = True
+                        self.decodificar(clave, raiz.der)
+                elif clave[0] == "0":
+                    clave.pop(0)
+                    if raiz.izq.info is not None:
+                        print(raiz.izq.info, end="")
+                    else:
+                        control = True
+                        self.decodificar(clave, raiz.izq)
                 else:
-                    texto.pop(0)
-                    palabra.append(raiz.info)
-        return palabra                    
+                    print("fallo")
+            else:
+                control = False
+                     
 
 
     
