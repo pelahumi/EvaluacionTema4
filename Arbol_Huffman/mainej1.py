@@ -8,7 +8,7 @@ nodo5 = NodoArbol("0", 0.05)
 nodo6 = NodoArbol("M", 0.09)
 nodo7 = NodoArbol("T", 0.15)
 
-lista = ListaNodos()
+lista = Huffman()
 
 lista.agregar_nodo(nodo1)
 lista.agregar_nodo(nodo2)
@@ -22,4 +22,5 @@ lista.sort()
 
 lista.suma()
 
-lista.barrido()
+print(lista.letra("11100101100", lista.suma()))
+

@@ -6,7 +6,7 @@ class NodoArbol:
         self.der = der
 
 
-class ListaNodos():
+class Huffman():
     def __init__(self):
         self.lista = []
     
@@ -28,7 +28,7 @@ class ListaNodos():
     def barrido(self):
         i = 0
         while i < len(self.lista):
-            print(self.lista[i].der.izq.izq.prob)
+            print(self.lista[i].info)
             i += 1
         else:
             return
@@ -48,6 +48,31 @@ class ListaNodos():
                 self.sort()
                 control = True
                 
+    def letra(self, texto, raiz):
+        texto = list(texto)
+        palabra = []
+        while len(texto) > 0:
+            i = 0
+            if self.lista[i].info is not None:
+                if texto[0] == 0:
+                    texto = texto.pop(0)
+                    self.letra(texto, raiz.izq)
+                elif texto[0] == 1:
+                    texto = texto.pop(0)
+                    self.letra(texto, raiz.der)
+                else:
+                    texto.pop(0)
+                    palabra.append(raiz.info)
+        return palabra                    
+
+
+    
+
+
+
+
+
+
 
 
     
