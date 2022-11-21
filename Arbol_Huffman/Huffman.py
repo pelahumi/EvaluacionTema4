@@ -28,7 +28,7 @@ class Huffman():
     def barrido(self):
         i = 0
         while i < len(self.lista):
-            print(self.lista[i].der.der.der.info)
+            print(self.lista[i].der.izq.der.info)
             i += 1
         else:
             return
@@ -48,6 +48,14 @@ class Huffman():
                 self.sort()
                 control = True
         return self.lista[0]
+
+    def codificar(self, palabra):
+        palabra = list(palabra)
+        tabla = {"A" : "00", "F" : "111", "1" : "100", "3" : "01", "0" : "1010", "M" : "1011", "T" : "110"}
+        while len(palabra) > 0:
+            if palabra[0] in tabla:
+                print(tabla[palabra[0]], end="")
+                palabra.pop(0)
 
     #Funciona cuando se introduce letra a letra, pero no se porque cuando se introduce una palabra no funciona         
     def decodificar(self, clave, raiz):
