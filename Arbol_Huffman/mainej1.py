@@ -22,7 +22,8 @@ lista.sort()
 
 lista.suma()
 raiz = lista.suma()
-lista.codificar("FA")
+clave = list("111 00")
+lista.decodificar(clave, raiz)
 
 
 

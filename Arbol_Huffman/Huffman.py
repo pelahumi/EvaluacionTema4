@@ -62,25 +62,24 @@ class Huffman():
         control = True
         while control:
             if len(clave) > 0:
-                control = False
-                if clave[0] ==  "1":
-                    clave.pop(0)
-                    if raiz.der.info is not None:
-                        print(raiz.der.info, end="")
-                    else:
-                        control = True
-                        self.decodificar(clave, raiz.der)
-                elif clave[0] == "0":
-                    clave.pop(0)
-                    if raiz.izq.info is not None:
-                        print(raiz.izq.info, end="")
-                    else:
-                        control = True
-                        self.decodificar(clave, raiz.izq)
-                else:
-                    print("fallo")
+                    control = False
+                    if clave[0] ==  "1":
+                        clave.pop(0)
+                        if raiz.der.info is not None:
+                            print(raiz.der.info, end="")
+                        else:
+                            control = True
+                            self.decodificar(clave, raiz.der)
+                    elif clave[0] == "0":
+                        clave.pop(0)
+                        if raiz.izq.info is not None:
+                            print(raiz.izq.info, end="")
+                        else:
+                            control = True
+                            self.decodificar(clave, raiz.izq)
             else:
                 control = False
+                
                      
 
 
