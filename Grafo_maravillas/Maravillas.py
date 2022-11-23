@@ -153,4 +153,9 @@ class Grafo():
             aux.visitado = False
             aux = aux.sig
 
-    
+    def barrido_vertices(self):
+        aux = self.inicio
+        while aux is not None:
+            print(aux.info)
+            aux = aux.sig
+            
