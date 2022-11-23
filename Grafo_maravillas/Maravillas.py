@@ -15,7 +15,6 @@ class NodoVertice():
         self.visitado = False 
         self.adyacentes = Arista()
 
-
 class Arista():
     def __init__(self):
         self.inicio = None
