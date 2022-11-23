@@ -146,5 +146,11 @@ class Grafo():
                 resultado = True
             aux = aux.sig
         return resultado
+    
+    def marcar_no_visitado(self):
+        aux = self.inicio
+        while aux is not None:
+            aux.visitado = False
+            aux = aux.sig
 
     
