@@ -118,5 +118,12 @@ class Grafo():
             aux = aux.sig
         return aux
 
+    def tamanio(self):
+        return self.tamanio
+    
+    def grafo_vacio(self):
+        return self.inicio is None
+    
+    
 
     
