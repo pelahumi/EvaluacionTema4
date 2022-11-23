@@ -1,3 +1,5 @@
+from Extras.Cola import Cola
+
 class NodoArista():
     def __init__(self, info, destino):
         self.info = info
@@ -174,3 +176,18 @@ class Grafo():
 
     def barrido_amplitud(self, vertice):
         cola = Cola()
+        while vertice is not None:
+            if not vertice.visitado:
+                vertice.visitado = True
+                cola.arribo(vertice)
+                while not cola.cola_vacia():
+                    nodo = cola.atencion()
+                    print(nodo.info)
+                    adyacentes = nodo.adyacentes.inicio
+                    while adyacentes is not None:
+                        adyacente = self.buscar_vertice(adyacentes.destino)
+                        if not adyacente.visitado:
+                            adyacente.visitado = True
+                            cola.arribo(adyacente)
+                        adyacentes = adyacentes.sig
+            vertice = vertice.sig
