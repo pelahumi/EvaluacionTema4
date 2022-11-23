@@ -158,4 +158,16 @@ class Grafo():
         while aux is not None:
             print(aux.info)
             aux = aux.sig
-            
+    
+    def barrido_profundidad(self, vertice):
+        while vertice is not None:
+            if not vertice.visitado:
+                vertice.visitado = True
+                print(vertice.info)
+                adyacentes = vertice.adyacentes.inicio
+                while adyacentes is not None:
+                    adyacente = self.buscar_vertice(adyacentes.destino)
+                    if not adyacente.visitado:
+                        self.barrido_profundidad(adyacente)
+                    adyacentes = adyacentes.sig
+            vertice = vertice.sig
