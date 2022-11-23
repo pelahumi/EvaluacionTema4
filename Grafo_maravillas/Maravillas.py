@@ -82,13 +82,6 @@ class Grafo():
                 vertice.tamanio -= 1
         return x
 
-    def buscar_vertice(self, buscado):
-        aux = self.inicio
-        while aux is not None and aux.info != buscado:
-            aux = aux.sig
-        return aux
-
-
     def eliminar_vertice(self, clave):
         x = None
         if self.inicio.info == clave:
@@ -113,7 +106,17 @@ class Grafo():
                 aux = aux.sig
         return x
 
+    def buscar_vertice(self, buscado):
+        aux = self.inicio
+        while aux is not None and aux.info != buscado:
+            aux = aux.sig
+        return aux
 
+    def buscar_arista(self, vertice, buscado):
+        aux = vertice.adyacentes.inicio
+        while aux is not None and aux.destino != buscado:
+            aux = aux.sig
+        return aux
 
 
     
