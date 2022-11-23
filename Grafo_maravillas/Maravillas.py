@@ -124,6 +124,18 @@ class Grafo():
     def grafo_vacio(self):
         return self.inicio is None
     
-    
+    def existe_paso(self, origen, destino):
+        resultado = False
+        if not origen.visitado:
+            origen.visitado = True
+            vadyacentes = origen.adyacentes.inicio
+            while vadyacentes is not None and not resultado:
+                adyacente = self.buscar_vertice(vadyacentes.destino)
+                if adyacente.info == destino.info:
+                    return True
+                elif not adyacente.visitado:
+                    resultado = self.existe_paso(adyacente, destino)
+                vadyacentes = vadyacentes.sig
+        return resultado
 
     
