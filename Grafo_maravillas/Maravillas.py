@@ -7,8 +7,10 @@ class NodoArista():
         self.sig = None
     
 class NodoVertice():
-    def __init__(self, info):
+    def __init__(self, info, nombre, pais):
         self.info = info
+        self.nombre = nombre
+        self.pais = pais
         self.sig = None
         self.visitado = False 
         self.adyacentes = Arista()
@@ -20,7 +22,7 @@ class Arista():
         self.tamanio = 0     
         
 class Grafo():
-    def __init__(self, dirigido= False):
+    def __init__(self, dirigido=False):
         self.inicio = None
         self.dirigido = dirigido
         self.tamanio = 0
