@@ -138,4 +138,13 @@ class Grafo():
                 vadyacentes = vadyacentes.sig
         return resultado
 
+    def es_adyacente(self, vertice, destino):
+        resultado = False
+        aux = vertice.adyacentes.inicio
+        while aux is not None and not resultado:
+            if aux.destino == resultado:
+                resultado = True
+            aux = aux.sig
+        return resultado
+
     
