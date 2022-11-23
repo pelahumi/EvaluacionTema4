@@ -171,3 +171,6 @@ class Grafo():
                         self.barrido_profundidad(adyacente)
                     adyacentes = adyacentes.sig
             vertice = vertice.sig
+
+    def barrido_amplitud(self, vertice):
+        cola = Cola()
