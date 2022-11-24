@@ -46,4 +46,5 @@ class Monticulo():
     def monticulo_vacio(self):
         return self.tamanio == 0
     
-    
+    def monticulo_lleno(self):
+        return self.tamanio == len(self.vector)
