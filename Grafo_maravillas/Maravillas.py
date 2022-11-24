@@ -1,4 +1,6 @@
 from Extras.Cola import Cola
+from Extras.Monticulo import Monticulo
+from Extras.Pila import Pila
 
 class NodoArista():
     def __init__(self, info, destino):
@@ -192,3 +194,25 @@ class Grafo():
                             cola.arribo(adyacente)
                         adyacentes = adyacentes.sig
             vertice = vertice.sig
+
+    def dijkstra(self, origen, destino):
+        no_visitados = Monticulo(self.tamanio)
+        camino = Pila()
+        aux = self.inicio
+        while aux is not None:
+            if aux.info == origen:
+                no_visitados.arribo([aux, None], 0)
+            else:
+                no_visitados.arribo([aux, None], aux.info)
+            aux = aux.sig
+        while not no_visitados.monticulo_vacio():
+            dato = no_visitados.atencion()
+            camino.apilar(dato)
+            aux = dato[1][0].adyacentes.inicio
+            while aux is not None:
+                pos = no_visitados.buscar(aux.destino)
+                if no_visitados.vector[pos][0] > dato[0] + aux.info:
+                    no_visitados.vector[pos][1][1] = dato[1][0].info
+                    no_visitados.cambiar_prioridad(pos, dato[0] + aux.info)
+                aux = aux.sig
+        return camino
