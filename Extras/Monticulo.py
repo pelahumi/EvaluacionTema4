@@ -52,3 +52,17 @@ class Monticulo():
     def monticulizar(self):
         for i in range(len(self.vector)):
             self.flotar(i)
+
+    def arribo(self, dato, prioridad):
+        self.agregar([prioridad, dato])
+
+    def atencion(self):
+        return self.quitar()[1]
+    
+    def cambiar_prioridad(self, indice, prioridad):
+        prioridad_anterior = self.vector[indice][0]
+        self.vector[indice][0] = prioridad
+        if prioridad > prioridad_anterior:
+            self.flotar(indice)
+        elif prioridad < prioridad_anterior:
+            self.hundir(indice)
