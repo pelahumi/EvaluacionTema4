@@ -1,8 +1,8 @@
 import pandas as pd
 
-pokemon = pd.read_csv("Pokemon/pokemon.csv")
+def filtrar(csv):
+    pokemon = pd.read_csv(csv)
+    pokemon.rename(columns={"#" : "id"}, inplace=True)
+    pokemon = pokemon[["id", "Name", "Type 1"]]
 
-pokemon.rename(columns={"#" : "id"}, inplace=True)
-
-pokemon = pokemon[["id", "Name", "Type 1"]]
-
+    return pokemon
