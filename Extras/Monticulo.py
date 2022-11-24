@@ -48,3 +48,7 @@ class Monticulo():
     
     def monticulo_lleno(self):
         return self.tamanio == len(self.vector)
+
+    def monticulizar(self):
+        for i in range(len(self.vector)):
+            self.flotar(i)
