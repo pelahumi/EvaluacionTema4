@@ -40,3 +40,10 @@ class Monticulo():
     def intercambio(self, indice, padre):
         self.vector[indice], self.vector[padre] = self.vector[padre], self.vector[indice]
 
+    def cantidad_elementos(self):
+        return self.tamanio
+
+    def monticulo_vacio(self):
+        return self.tamanio == 0
+    
+    
