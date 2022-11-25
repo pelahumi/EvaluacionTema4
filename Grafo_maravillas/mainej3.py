@@ -1,4 +1,4 @@
-from Maravillas import *
+from Funciones import *
 
 if __name__ == "__main__":
     #Vertices
@@ -22,3 +22,13 @@ if __name__ == "__main__":
 
     #Aristas
     maravillas_naturales.agregar_arista()
+
+
+
+    #Mas de una maravilla
+    x = mas_de_una_maravilla(maravillas_naturales, "Pais que quieras")
+    y = mas_de_una_maravilla(maravillas_arquitectonicas, "Pais que quieras")
+    print(x)
+    print(y)
+
+    
