@@ -1,6 +1,7 @@
 from Maravillas import *
 
 if __name__ == "__main__":
+    #Vertices
     maravillas_naturales = Grafo()
     maravillas_naturales.insertar_vertice(1, "Amazonas", "Brasil", "Naturales")
     maravillas_naturales.insertar_vertice(2, "Bahia de Ha Long", "Vietnam", "Naturales")
@@ -18,3 +19,6 @@ if __name__ == "__main__":
     maravillas_arquitectonicas.insertar_vertice(5, "Machu Picchu", "Peru", "Arquitectonica")
     maravillas_arquitectonicas.insertar_vertice(6, "Petra", "Jordania", "Arquitectonica")
     maravillas_arquitectonicas.insertar_vertice(7, "Taj Mahal", "India", "Arquitectonica")
+
+    #Aristas
+    maravillas_naturales.agregar_arista()
