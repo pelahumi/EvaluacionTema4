@@ -132,5 +132,16 @@ def tipos(arbol):
             aux = aux.sig
     return tipos
 
+def cuantos_pokemon_por_tipo(arbol, tipo):
+    n = 0
+    aux = arbol.raiz
+    while aux is not None:
+        if tipo == aux.info:
+            n += 1
+            aux = aux.sig
+        else:
+            aux.sig
+    return n
+
         
 

@@ -24,4 +24,7 @@ if __name__ == "__main__":
     print(debil)
 
     #Parte 5
-    
+    tipos = tipos(arbol_tipos)
+    print(tipos)
+
+    numero_pokemon = cuantos_pokemon_por_tipo(arbol_tipos, "El tipo que quieres")
