@@ -31,4 +31,7 @@ if __name__ == "__main__":
     print(x)
     print(y)
 
-    
+
+    #Maravilla natural y arquitectonica
+    x = arquitectonicas_y_naturales(maravillas_arquitectonicas, maravillas_naturales)
+    print(x)
