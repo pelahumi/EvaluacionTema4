@@ -1,5 +1,4 @@
-from Arbol import *
-from pokemon import filtrar, agregar, buscar, buscar_tipos
+from pokemon import *
 
 if __name__ == "__main__":
     pokemon = filtrar("Pokemon/pokemon.csv")
@@ -21,3 +20,8 @@ if __name__ == "__main__":
         print(pokemon["Name"][i])
     
     #Parte 4
+    debil = debil_a("Pokemon que quieras")
+    print(debil)
+
+    #Parte 5
+    
